@@ -1,0 +1,77 @@
+/* Table */
+.container table {
+  @apply w-full border rounded-xl border-light-border dark:border-dark-border;
+
+  border-collapse: collapse;
+}
+
+.container table thead {
+  @apply text-left;
+}
+
+.container table th,
+.container table td {
+  @apply p-2;
+}
+
+.container table tbody tr:nth-child(2n-1) {
+  @apply bg-gray-100;
+}
+
+/* title */
+
+.container h2 {
+  @apply mt-6 mb-4;
+}
+
+.container h3 {
+  @apply mt-6 mb-4;
+}
+
+.container h4 {
+  @apply mt-6 mb-4;
+}
+
+/* Paragraph */
+
+.container p {
+  @apply my-2;
+}
+
+/* List */
+.container ul {
+  @apply my-2;
+
+  list-style: disc inside;
+}
+
+.container ol {
+  @apply my-2;
+
+  list-style: auto inside;
+}
+
+/* Inline Code */
+
+.container code {
+  @apply break-all rounded-md bg-main-sidebar-background px-1.5 py-0.5 text-xs;
+}
+
+/* Image */
+
+.container img {
+  display: inline-block;
+  max-height: 50vh;
+  object-fit: contain;
+}
+
+/* Link */
+
+.container a {
+  color: rgb(var(--main-accent));
+  word-break: break-all;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}
