@@ -43,24 +43,24 @@ type InputFormProps = {
   setPrice: (price: any) => void;
 };
 
-export const PRICE_LIST = [
-  {
-    text: "Free",
-    amount: undefined,
-  },
-  {
-    text: "1 MIRA",
-    amount: 100,
-  },
-  {
-    text: "5 MIRA",
-    amount: 500,
-  },
-  {
-    text: "10 MIRA",
-    amount: 1000,
-  },
-];
+// export const PRICE_LIST = [
+//   {
+//     text: "Free",
+//     amount: undefined,
+//   },
+//   {
+//     text: "1 MIRA",
+//     amount: 100,
+//   },
+//   {
+//     text: "5 MIRA",
+//     amount: 500,
+//   },
+//   {
+//     text: "10 MIRA",
+//     amount: 1000,
+//   },
+// ];
 
 const variants: Variants[] = [
   {
@@ -140,7 +140,7 @@ export function InputForm({
     visited && !reply && !replyModal && !loading && !page;
 
   return (
-    <div className="flex min-h-[48px] w-full flex-col justify-center gap-4">
+    <div className="flex min-h-[48px] w-full flex-col justify-center gap-1">
       <Modal
         modalClassName="max-w-xs bg-main-background w-full p-8 rounded-2xl"
         open={open}
@@ -155,15 +155,15 @@ export function InputForm({
           closeModal={closeModal}
         />
       </Modal>
-      <div className="relative flex flex-col gap-6">
+      <div className="relative flex flex-col gap-2">
         {isVisibilityShown && (
           <Menu>
             <Menu.Button
-              className="flex items-center self-start gap-1 px-3 py-0 border custom-button accent-tab accent-bg-tab border-light-line-reply text-main-accent hover:bg-main-accent/10 active:bg-main-accent/20 dark:border-light-secondary"
-              {...fromTop}
+              // className="flex items-center self-start gap-1 px-3 py-0 border custom-button accent-tab accent-bg-tab border-light-line-reply text-main-accent hover:bg-main-accent/10 active:bg-main-accent/20 dark:border-light-secondary"
+              // {...fromTop}
             >
-              <p className="font-bold">{price.text}</p>
-              <HeroIcon className="w-4 h-4" iconName="ChevronDownIcon" />
+              {/* <p className="font-bold">{price.text}</p> */}
+              {/* <HeroIcon className="w-4 h-4" iconName="ChevronDownIcon" /> */}
             </Menu.Button>
             <AnimatePresence>
               <Menu.Items
@@ -171,7 +171,7 @@ export function InputForm({
                 as={motion.div}
                 {...fromTop}
               >
-                {PRICE_LIST.map((item) => (
+                {/* {PRICE_LIST.map((item) => (
                   <Menu.Item key={item.text}>
                     {() => (
                       <div
@@ -184,22 +184,22 @@ export function InputForm({
                       </div>
                     )}
                   </Menu.Item>
-                ))}
+                ))} */}
               </Menu.Items>
             </AnimatePresence>
           </Menu>
         )}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center max-h-full gap-3">
           <TextArea
             id={formId}
-            className="w-full min-w-0 text-xl bg-transparent outline-none resize-none placeholder:text-light-secondary dark:placeholder:text-dark-secondary"
+            className="w-full min-w-0 p-0 text-xl border-solid rounded-lg outline-none resize-none bg-gray-700/[0.9] outline-1px border-slate-500 placeholder:text-light-secondary dark:placeholder:text-dark-secondary"
             value={inputValue}
             placeholder={
               reply || replyModal
                 ? "Post your reply"
                 : page
                 ? "Post your page"
-                : "Post 4Real"
+                : "What's happening?"
             }
             onBlur={handleShowHideNav(true)}
             minRows={loading ? 1 : modal && !isUploadingImages ? 3 : 1}
@@ -230,7 +230,7 @@ export function InputForm({
             type="button"
             className="flex items-center gap-1 px-3 py-0 custom-button accent-tab accent-bg-tab text-main-accent hover:bg-main-accent/10 active:bg-main-accent/20"
           >
-            {!price.amount ? (
+            {/* {!price.amount ? (
               <>
                 <HeroIcon className="w-4 h-4" iconName="GlobeAmericasIcon" />
                 <p className="font-bold">Accessible to everyone</p>
@@ -240,7 +240,7 @@ export function InputForm({
                 <HeroIcon className="w-4 h-4" iconName="LockClosedIcon" />
                 <p className="font-bold">Requires {price.text} to unlock</p>
               </>
-            )}
+            )} */}
           </button>
         </motion.div>
       )}

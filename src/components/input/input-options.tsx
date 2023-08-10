@@ -19,7 +19,7 @@ type Options = {
 
 const options: Readonly<Options> = [
   {
-    name: "Image",
+    name: "Photo",
     iconName: "PhotoIcon",
     disabled: false,
   },
@@ -69,7 +69,7 @@ export function InputOptions({
 
   return (
     <motion.div className="flex justify-between" {...variants}>
-      <div className="flex text-main-accent md:[&>button]:!block">
+      <div className="flex text-main-accent md:[&>button]:!block gap-2">
         <input
           className="hidden"
           type="file"
@@ -88,7 +88,7 @@ export function InputOptions({
         />
         {filteredOptions.map(({ name, iconName }) => (
           <Button
-            className="relative p-2 rounded-full accent-tab accent-bg-tab group hover:bg-main-accent/10 active:bg-main-accent/20"
+            className="relative p-2 rounded-lg bg-gray-700/[0.5] bottom-1 accent-tab accent-bg-tab group hover:bg-main-accent/10 active:bg-main-accent/20 gap-4"
             onClick={async () => {
               setType(name.toLowerCase() as "image" | "video" | "audio");
               await sleep(100);
@@ -96,7 +96,12 @@ export function InputOptions({
             }}
             key={name}
           >
-            <HeroIcon className="w-5 h-5" iconName={iconName} />
+            <div className="flex flex-row items-center gap-1">
+              <HeroIcon className="w-5 h-5" iconName={iconName} />
+              <div className="text-sm text-light-secondary">{name}</div>
+              {/* text-light-secondary */}
+            </div>
+
             <ToolTip tip={name} modal={modal} />
           </Button>
         ))}
