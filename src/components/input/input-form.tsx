@@ -43,24 +43,24 @@ type InputFormProps = {
   setPrice: (price: any) => void;
 };
 
-// export const PRICE_LIST = [
-//   {
-//     text: "Free",
-//     amount: undefined,
-//   },
-//   {
-//     text: "1 MIRA",
-//     amount: 100,
-//   },
-//   {
-//     text: "5 MIRA",
-//     amount: 500,
-//   },
-//   {
-//     text: "10 MIRA",
-//     amount: 1000,
-//   },
-// ];
+export const PRICE_LIST = [
+  {
+    text: "Free",
+    amount: undefined,
+  },
+  {
+    text: "1 MIRA",
+    amount: 100,
+  },
+  {
+    text: "5 MIRA",
+    amount: 500,
+  },
+  {
+    text: "10 MIRA",
+    amount: 1000,
+  },
+];
 
 const variants: Variants[] = [
   {
@@ -192,7 +192,7 @@ export function InputForm({
         <div className="flex items-center max-h-full gap-3">
           <TextArea
             id={formId}
-            className="w-full min-w-0 p-0 text-lg border-solid rounded-lg outline-none resize-none bg-gray-700/[0.9] outline-1px border-slate-500 placeholder:text-light-secondary dark:placeholder:text-dark-secondary"
+            className="w-full min-w-0 p-0 text-xl border-solid rounded-lg outline-none resize-none bg-gray-700/[0.9] outline-1px border-slate-500 placeholder:text-light-secondary dark:placeholder:text-dark-secondary"
             value={inputValue}
             placeholder={
               reply || replyModal

@@ -80,7 +80,7 @@ export function Input({
   const [visited, setVisited] = useState(false);
   const [isNSFW, setIsNSFW] = useState(false);
 
-  // const [price, setPrice] = useState<any>(PRICE_LIST[0]);
+  const [price, setPrice] = useState<any>(PRICE_LIST[0]);
 
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -372,8 +372,8 @@ export function Input({
             discardTweet={discardTweet}
             handleChange={handleChange}
             handleImageUpload={handleImageUpload}
-            // price={price}
-            // setPrice={setPrice}
+            price={price}
+            setPrice={setPrice}
           >
             {type === "image" ? (
               isUploadingImages && (
